@@ -4,18 +4,41 @@ import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.CompoundButton.OnCheckedChangeListener;
 
 public class LoginActivity extends AppCompatActivity {
+
+    private EditText account_edit;
+    private TextView password_edit;
+    private CheckBox checkbox;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        //登录按键
-        Button login_button=(Button)findViewById(R.id.login_button);
+        password_edit=(TextView)findViewById(R.id.password_edit);
+        checkbox=(CheckBox)findViewById(R.id.checkbox);
+        checkbox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked){
+                    password_edit.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                }
+                else password_edit.setTransformationMethod(PasswordTransformationMethod.getInstance());
+            }
+        });
+
+                //登录按键
+                Button login_button = (Button) findViewById(R.id.login_button);
         login_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
