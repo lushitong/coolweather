@@ -26,24 +26,20 @@
             android:value="856GNpZZP9SsWXPWEMcRZsxAtYuqmcGL" />
 
         <!-- 对LoginActivity活动注册，注册为主活动 -->
-        <activity android:name="com.coolweather.android.LoginActivity">
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name="com.coolweather.android.MainActivity" />
-
-        <activity android:name="com.coolweather.android.WeatherActivity" />
-
-        <activity android:name="com.coolweather.android.LBSActivity" />
-
-        <activity android:name="com.coolweather.android.UserActivity"></activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".WeatherActivity" />
+        <activity android:name=".LBSActivity" />
+        <activity android:name=".UserActivity" />
 
         <service
-            android:name="com.coolweather.android.service.AutoUpdateService"
+            android:name=".service.AutoUpdateService"
             android:enabled="true"
             android:exported="true" />
         <service
@@ -51,7 +47,7 @@
             android:enabled="true"
             android:process=":remote" />
 
-
+        <activity android:name=".RegisterActivity"></activity>
     </application>
 
 </manifest>

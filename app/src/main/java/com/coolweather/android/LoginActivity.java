@@ -68,9 +68,11 @@ public class LoginActivity extends AppCompatActivity {
                 String password=password_edit.getText().toString();
                 if (account.equals("lushitong")&&password.equals("123456")) {
                     editor=preferences.edit();
+
+                    //检查记住密码复选框是否被选中
                     if (remember_password.isChecked()){
-                        editor.putBoolean("remember_password",true);
-                        editor.putString("account",account);
+                        editor.putBoolean("remember_password",true);//将remmeber_password设置为true
+                        editor.putString("account",account);//将account对应的值存入到SharePreferences文件中并提交
                         editor.putString("password",password);
                     }
                     else {
@@ -87,12 +89,11 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        //注册按键,点击后会调用浏览器打开指定网址
+        //注册button
         reg_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse("http://lib.glut.edu.cn/"));//Uri.parse()将网址字符串解析成一个Uri对象，setData()负责接收对象
+                Intent intent=new Intent(LoginActivity.this,RegisterActivity.class);
                 startActivity(intent);
             }
         });

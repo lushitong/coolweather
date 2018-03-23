@@ -9,7 +9,7 @@
     tools:context="com.coolweather.android.LoginActivity">
 
     <TextView
-        android:id="@+id/appname"
+        android:id="@+id/login_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -65,11 +65,13 @@
             android:id="@+id/remeber_password"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:checked="true"
             android:text="记住密码"/>
     <CheckBox
         android:id="@+id/show_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:checked="true"
         android:text="显示密码" />
     </LinearLayout>
 
